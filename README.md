@@ -27,7 +27,7 @@ make install
 
 
 ## Building 
-Currently the only supported platform is Linux. You must also have a complier that supports C++11
+Currently the only supported on the Raspberry Pi 3. You must also have a complier that supports C++11
 
 clone this repository
 ```
