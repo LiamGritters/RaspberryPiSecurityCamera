@@ -37,7 +37,7 @@ cd cpp
 
 make
 
-sudo cp RaspberryPiMotionDetection /usr/local/bin/
+sudo cp ./bin/RaspberryPiMotionDetection /usr/local/bin/
 ```
 
 ## V4L2Loopback
@@ -59,7 +59,7 @@ https://www.instructables.com/Host-your-website-on-Raspberry-pi/
 
 ## Simple Webpage
 
-copy the contents html folder into /var/www/html/ 
+copy the contents of the html folder into /var/www/html/ 
 ```
 cd html
 cp ./* /var/www/html/
@@ -69,9 +69,7 @@ cp ./* /var/www/html/
 
 Add systemd service to enable functionality to start on boot-up of your raspberry pi
 ```
-cp MotionDetection.service /etc/systemd/system/
-cp Compression.service /etc/systemd/system/
-cp Dash.service /etc/systemd/system/
+sudo cp ./*.service /etc/systemd/system/
 
 sudo systemctl daemon-reload
 

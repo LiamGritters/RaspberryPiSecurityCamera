@@ -5,7 +5,7 @@ After=MotionDetection.service
 
 [Service]
 User=pi
-ExecStart=/usr/local/bin/v4l2compress_omx /dev/video9 /dev/video8 
+ExecStart=/usr/bin/v4l2compress_omx /dev/video9 /dev/video8 
 Restart=always
 RestartSec=2
 
