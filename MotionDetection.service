@@ -1,0 +1,11 @@
+[Unit]
+Description=Motion Detection On Raspberry Pi
+
+[Service]
+User=pi
+ExecStart=/usr/local/bin/RaspberryPiMotionDetection 
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

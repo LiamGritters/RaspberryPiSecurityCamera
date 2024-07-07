@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Live Stream</title>
+    <style>
+        html body .page {
+            height: 100%;
+            width: 100%;
+        }
+
+        video {
+            width: 800px;
+        }
+
+        .wrapper {
+            width: 800px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="wrapper">
+        <h1> My Live Stream</h1>
+        <video data-dashjs-player autoplay muted controls type="application/dash+xml"></video>
+    </div>
+</div>
+<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+<script>
+    var player = init();
+
+    function init() {
+        var video = document.querySelector("video");
+        player = dashjs.MediaPlayer().create();
+        player.initialize(video, "video/video.mpd", true);
+        player.updateSettings({
+            'streaming': {
+                'lowLatencyEnabled': true,
+                'liveDelayFragmentCount': 0,
+                'liveDelay': 0,
+                'liveCatchUpMinDrift': 0.05,
+                'liveCatchUpPlaybackRate': 0.5
+            }
+        });
+        return player;
+    }
+</script>
+
+<a href="savedVideo"><p style="text-align:center">Saved Video</p></a>
+
+</body>
+</html>

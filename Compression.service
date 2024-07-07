@@ -1,0 +1,13 @@
+[Unit]
+Description="Compression for live stream"
+Wants=MotionDetection.service
+After=MotionDetection.service
+
+[Service]
+User=pi
+ExecStart=/usr/local/bin/v4l2compress_omx /dev/video9 /dev/video8 
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
